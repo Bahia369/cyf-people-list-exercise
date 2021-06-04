@@ -33,7 +33,7 @@ import React, { useState } from "react";
 const PeopleList = () => {
   const [people, setPeople] = useState(["Dave", "Alice", "Bob"]);
   const [newName, setNewName] = useState("");
-  const [inputValue, setInputValue] = useState("");
+  // const [inputValue, setInputValue] = useState("");
   console.log(people);
 
   function addNewPerson() {
@@ -71,10 +71,7 @@ const PeopleList = () => {
         </label>
         <button onClick={addNewPerson}>Add person</button>
         <button onClick={remove}>Remove Last Person</button>
-        <input
-          type="text"
-          onChange={(event) => setInputValue(event.target.value)}
-        />
+        <input type="text" onChange={(event) => event.target.value} />
       </div>
     </div>
   );
