@@ -33,7 +33,7 @@ import React, { useState } from "react";
 const PeopleList = () => {
   const [people, setPeople] = useState(["Dave", "Alice", "Bob"]);
   const [newName, setNewName] = useState("");
-  // const [inputValue, setInputValue] = useState("");
+  const [filter, setFilter] = useState("");
   console.log(people);
 
   function addNewPerson() {
@@ -48,7 +48,7 @@ const PeopleList = () => {
   function handleRemove1(e) {
     const removePeople = people.filter((item) => item !== newName);
     setPeople(removePeople);
-  }
+  // }
   // function delName() {
   //   const filName = people.filter((item) => item !== setInputValue(inputValue));
   // }
@@ -71,7 +71,11 @@ const PeopleList = () => {
         </label>
         <button onClick={addNewPerson}>Add person</button>
         <button onClick={remove}>Remove Last Person</button>
-        <input type="text" onChange={(event) => event.target.value} />
+        <input
+          type="text"
+          value={filter}
+          onChange={(event) => setFilter(event.target.value)}
+        />
       </div>
     </div>
   );
